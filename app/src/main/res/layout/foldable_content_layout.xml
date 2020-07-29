@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/black"
+    android:orientation="vertical"
+    android:visibility="gone"
+    >
+
+    <!-- content header line -->
+
+
+    <!-- content header image -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/hire_head_image1"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/chem" />
+
+        <TextView
+            android:id="@+id/hire_StudentsTutored"
+            style="@style/ContentImageBadgeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/hire_head_image1"
+            android:layout_alignLeft="@id/hire_head_image1"
+            android:layout_alignBottom="@id/hire_head_image1"
+            android:paddingStart="20dp"
+            android:paddingLeft="20dp"
+            android:paddingBottom="10dp"
+            android:text="5" />
+
+        <TextView
+            style="@style/ContentImageBadgeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/hire_StudentsTutored"
+            android:layout_alignStart="@id/hire_StudentsTutored"
+            android:layout_alignLeft="@id/hire_StudentsTutored"
+            android:paddingStart="20dp"
+            android:paddingLeft="20dp"
+            android:text="Students Tutored" />
+
+
+        <TextView
+            android:id="@+id/hire_hourlyRate"
+            style="@style/ContentImageBadgeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@id/hire_head_image1"
+            android:layout_alignRight="@id/hire_head_image1"
+            android:layout_alignBottom="@id/hire_head_image1"
+            android:paddingRight="20dp"
+            android:paddingBottom="10dp"
+            android:text="$150" />
+
+        <TextView
+            style="@style/ContentImageBadgeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/hire_hourlyRate"
+            android:layout_alignStart="@id/hire_hourlyRate"
+            android:layout_alignLeft="@id/hire_hourlyRate"
+            android:paddingRight="20dp"
+            android:text="Hourly" />
+
+
+    </RelativeLayout>
+
+    <!-- content body layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingTop="9dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="6dp">
+
+        <!-- avatar and name part -->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/hire_head_image"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_profile" />
+
+            <TextView
+                android:id="@+id/hire_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/hire_head_image"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="2dp"
+                android:layout_toEndOf="@id/hire_head_image"
+                android:layout_toRightOf="@id/hire_head_image"
+                android:text="John Doe"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <com.hsalf.smilerating.SmileRating
+                android:id="@+id/hire_smile_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/hire_name"
+                android:layout_alignStart="@id/hire_name"
+                android:layout_alignLeft="@id/hire_name" />
+
+
+        </RelativeLayout>
+
+        <!-- divider line -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginBottom="6dp"
+            android:src="@color/contentDividerLine" />
+
+        <!-- addresses part -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/fold_Location"
+                    style="@style/ContentMainBadgeTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:text="location"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/hire_street"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/fold_Location"
+                    android:layout_alignStart="@id/fold_Location"
+                    android:layout_alignLeft="@id/fold_Location"
+                    android:text="19B DHA Phase 1"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/hire_city"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/hire_street"
+                    android:layout_alignStart="@id/hire_street"
+                    android:layout_alignLeft="@id/hire_street"
+                    android:text="Lahore, Cant"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <!-- divider line -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="6dp"
+            android:src="@color/contentDividerLine" />
+
+        <!-- dates part -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/Session_date"
+                    style="@style/ContentMainBadgeTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:text="Available Hours"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/hire_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/Session_date"
+                    android:layout_alignStart="@id/Session_date"
+                    android:layout_alignLeft="@id/Session_date"
+                    android:text="6:30 pm"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/hire_timePick"
+                    style="@style/ContentMainBadgeTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:text="TO"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/hire_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/hire_timePick"
+                    android:layout_alignStart="@id/hire_timePick"
+                    android:layout_alignLeft="@id/hire_timePick"
+                    android:text="9:30 pm"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <!-- request button -->
+        <TextView
+            android:id="@+id/hire_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/btnRequest"
+            android:padding="10dp"
+            android:text="Hire"
+            android:textAlignment="center"
+            android:textColor="@color/mainTextColor"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/fold_tutorRequests"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="5 people have requested this tutor"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

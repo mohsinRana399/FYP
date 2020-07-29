@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="ld_activityScreenTitles">
+        <item>Dashboard</item>
+        <item>My profile</item>
+        <item>Messages</item>
+        <item>Find a tutor</item>
+        <item />
+        <item>Log Out</item>
+    </string-array>
+
+    <array name="ld_activityScreenIcons">
+        <item>@drawable/ic_profile</item>
+        <item>@drawable/ic_profile</item>
+        <item>@drawable/ic_message</item>
+        <item>@drawable/ic_profile</item>
+        <item>0</item>
+        <item>@drawable/ic_profile</item>
+    </array>
+
+</resources>

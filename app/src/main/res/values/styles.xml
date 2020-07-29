@@ -1,0 +1,110 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <!--<item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>-->
+
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+
+
+        <!-- <item name="android:windowContentOverlay">@null</item>
+         <item name="windowActionBar">false</item>-->
+
+        <!-- Material Theme -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/accent_color</item>
+
+        <item name="android:statusBarColor" tools:targetApi="21">@color/statusBarColor</item>
+        <item name="android:navigationBarColor" tools:targetApi="21">@color/navigationBarColor
+        </item>
+        <!-- <item name="android:windowDrawsSystemBarBackgrounds" tools:targetApi="21">true</item>-->
+    </style>
+
+    <!-- Dialog -->
+    <style name="ReviewAlertStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:background">#4550B9</item>
+        <item name="buttonBarPositiveButtonStyle">@style/MyAlertDialogButtonStyle</item>
+        <item name="buttonBarNegativeButtonStyle">@style/MyAlertDialogButtonStyle</item>
+        <item name="buttonBarNeutralButtonStyle">@style/MyAlertDialogButtonStyle</item>
+    </style>
+    <style name="MyDialogSlideHorizontalAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_left</item>
+        <item name="android:windowExitAnimation">@anim/slide_right</item>
+    </style>
+
+    <style name="MyAlertDialogButtonStyle" parent="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
+    </style>
+
+    <style name="MyDialogFadeAnimation">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/blue</item>
+    </style>
+    <style name="MyTitleTextStyle">
+        <item name="android:textColor">#FFEB3B</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Title</item>
+    </style>
+    <style name="MyAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        ...
+        <item name="android:windowTitleStyle">@style/MyTitleTextStyle</item>
+        <!-- Used for the title and text -->
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <!-- Used for the background -->
+        <item name="android:background">@color/black</item>
+    </style>
+
+    <style name="TextLabel" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorControlActivated">#FFCC00</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@color/drawerArrowColor</item>
+    </style>
+
+    <style name="EditTextTintTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorPrimaryDark">#0288D1</item>
+    </style>
+
+    <style name="ContentImageBadgeTitle" parent="AppTheme">
+        <item name="android:alpha">0.5</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">12dp</item>
+    </style>
+
+    <style name="ContentImageBadgeText" parent="AppTheme">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textStyle">bold</item>
+
+    </style>
+
+    <style name="ContentMainBadgeTitle" parent="AppTheme">
+        <item name="android:textColor">@color/contentBadgeTitle</item>
+        <item name="android:textSize">12dp</item>
+    </style>
+
+    <style name="TitleBadgeText" parent="AppTheme">
+        <item name="android:textColor">@color/titleBadgeText</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="TitleBadgeTitle" parent="AppTheme">
+        <item name="android:textColor">@color/titleBadgeTitle</item>
+        <item name="android:textSize">12dp</item>
+    </style>
+
+</resources>

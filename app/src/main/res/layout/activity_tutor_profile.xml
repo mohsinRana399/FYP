@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".dashitems.TutorProfileActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey"
+        android:orientation="vertical"
+        tools:context=".ProfileActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:background="#293859" />
+
+        <!--Top Header Layout-->
+        <LinearLayout
+            android:id="@+id/topbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:gravity="center_vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:onClick="Back"
+                android:padding="10dp"
+                android:src="@drawable/ic_arrow_back_24dp" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profile"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/topbar"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingRight="20dp">
+
+                <!--Top Profile Section -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/circularbordersolid"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        app:cardCornerRadius="6dp"
+                        app:cardElevation="0dp">
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|right"
+                            android:baselineAligned="false"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imageView2"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:onClick="EditProfilePic"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_edit" />
+                        </LinearLayout>
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/Tutor_Profile_pic"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_profile"
+                            app:civ_border_color="#FF000000"
+
+                            app:civ_border_width="2dp" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/Tutor_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/proximanovaregular"
+                                android:text="Your_Name"
+                                android:textColor="#424242"
+                                android:textSize="21sp"
+                                android:textStyle="bold" />
+
+                            <Space
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="10dp"
+                                android:fontFamily="@font/proximanovaregular"
+                                android:onClick="EditName"
+                                android:text="Edit"
+                                android:textColor="#FFCF66"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:id="@+id/Tutor_profile_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/proximanovaregular"
+                            android:gravity="center"
+                            android:text="YOUR_TITLE"
+                            android:textSize="14sp" />
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingBottom="10dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:padding="8dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <com.hsalf.smilerating.SmileRating
+                                    android:id="@+id/tsr"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!--Option Bar-->
+
+                <!--Bootom Cards with sections-->
+                <LinearLayout
+                    android:id="@+id/personalinfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!--About Me Card-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/circularbordersolid"
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/proximanovaregular"
+                                    android:text="@string/about_me"
+                                    android:textSize="17sp"
+                                    android:textStyle="bold" />
+
+                                <Space
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="10dp"
+                                    android:fontFamily="@font/proximanovaregular"
+                                    android:onClick="EditAboutMe"
+                                    android:text="Edit"
+                                    android:textColor="#FFCF66"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/Tutor_Profile_status"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="@string/samplereview" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:baselineAligned="false"
+                            android:orientation="horizontal">
+
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    android:id="@+id/dt"
+                                    style="@style/ContentMainBadgeTitle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_alignParentLeft="true"
+                                    android:text="Available from"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="17sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/Tutor_available_from"
+                                    android:onClick="EditAvailFrom"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/dt"
+                                    android:layout_alignStart="@id/dt"
+                                    android:layout_marginLeft="40dp"
+                                    android:layout_marginTop="5dp"
+                                    android:text="6:30 pm"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="14sp"
+                                    android:textStyle="normal" />
+
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    android:id="@+id/tp"
+                                    style="@style/ContentMainBadgeTitle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_marginLeft="40dp"
+                                    android:text="Available to"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="17sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/Tutor_available_to"
+                                    android:onClick="EditAvailableTo"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tp"
+                                    android:layout_alignStart="@id/tp"
+                                    android:layout_alignLeft="@id/tp"
+                                    android:layout_marginLeft="25dp"
+                                    android:layout_marginTop="5dp"
+                                    android:text="9:30 pm"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp"
+                                    android:textStyle="normal" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:baselineAligned="false"
+                            android:orientation="horizontal">
+
+
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    android:id="@+id/hire_timePick"
+                                    style="@style/ContentMainBadgeTitle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_marginLeft="110dp"
+                                    android:gravity="center"
+                                    android:text="Hourly Rate"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="17sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/sRequests"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/hire_timePick"
+                                    android:layout_alignStart="@id/hire_timePick"
+                                    android:layout_alignLeft="@id/hire_timePick"
+                                    android:layout_marginLeft="38dp"
+                                    android:layout_marginTop="10dp"
+                                    android:foregroundGravity="center"
+                                    android:gravity="center"
+                                    android:text="0"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp"
+                                    android:textStyle="normal" />
+
+                            </RelativeLayout>
+                            <TextView
+                                android:id="@+id/textView5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="10dp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/proximanovaregular"
+                                android:gravity="right"
+                                android:onClick="EditHourlyRate"
+                                android:text="Edit"
+                                android:textColor="#FFCF66"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!--Contact Details-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/circularbordersolid"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/proximanovaregular"
+                                android:text="@string/contact"
+                                android:textSize="17sp"
+                                android:textStyle="bold" />
+
+                            <Space
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="10dp"
+                                android:onClick="EditContactInfo"
+                                android:text="Edit"
+                                android:textColor="#FFCF66"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:paddingRight="8dp">
+
+                                <ImageView
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:background="@drawable/circular_grey_bordersolid"
+                                    android:padding="10dp"
+                                    android:src="@drawable/ic_call_24dp" />
+
+                                <TextView
+                                    android:id="@+id/tutor_phone"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="20dp"
+                                    android:fontFamily="@font/proximanovaregular"
+                                    android:text="0900-78601"
+                                    android:textColor="@color/goodgrey"
+                                    android:textSize="15sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:gravity="center_vertical"
+                                android:paddingRight="8dp">
+
+                                <ImageView
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:background="@drawable/circular_grey_bordersolid"
+                                    android:padding="10dp"
+                                    android:src="@drawable/ic_email_24dp" />
+
+                                <TextView
+                                    android:id="@+id/tutor_email"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="20dp"
+                                    android:fontFamily="@font/proximanovaregular"
+                                    android:text="info@you.com"
+                                    android:textColor="@color/goodgrey"
+                                    android:textSize="15sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="500dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:gravity="center_vertical"
+                                android:paddingRight="8dp">
+
+
+                                <ImageView
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:background="@drawable/circular_grey_bordersolid"
+                                    android:padding="10dp"
+                                    android:src="@drawable/ic_location_24dp" />
+
+                                <TextView
+                                    android:id="@+id/tutor_location"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="20dp"
+                                    android:fontFamily="@font/proximanovaregular"
+                                    android:text="YOUR_LOCATION"
+                                    android:textColor="@color/goodgrey"
+                                    android:textSize="15sp" />
+
+                                <com.github.jorgecastilloprz.FABProgressCircle
+                                    android:id="@+id/fabProgressCircle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="false"
+                                    android:layout_gravity="right"
+                                    android:paddingLeft="90dp"
+                                    android:visibility="invisible">
+
+                                    <!--Google FAB-->
+                                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                        android:id="@+id/fab"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:onClick="fabLoad"
+                                        android:src="@drawable/ic_upload"
+                                        app:borderWidth="0dp"
+                                        app:elevation="@dimen/fab_elevation"
+                                        app:rippleColor="@color/fab_ripple" />
+                                </com.github.jorgecastilloprz.FABProgressCircle>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
