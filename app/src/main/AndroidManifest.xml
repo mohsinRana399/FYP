@@ -14,10 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:windowSoftInputMode="stateVisible|adjustResize">
-        <activity android:name=".review.Review_activity"></activity>
+        <activity android:name=".review.Review_activity" />
         <activity android:name=".dashitems.TutorProfileActivity" />
         <activity android:name=".Chat.data.MainChatActivity" />
         <activity android:name=".Hire.HireActivity" />
+        <activity android:name=".Hire.payment.PaymentActivity" />
         <activity android:name=".logreg.RegisterActivity" />
         <activity android:name=".Chat.data.ChatClassesACt.AddGroupActivity" />
         <activity android:name=".Chat.data.ChatClassesACt.ChatActivity" />

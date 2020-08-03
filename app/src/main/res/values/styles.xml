@@ -46,6 +46,21 @@
         <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
         <item name="android:windowExitAnimation">@android:anim/fade_out</item>
     </style>
+    <style name="YourCustomTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+
+        <!-- TOOLBAR COLOR. -->
+        <item name="colorPrimary">#000000</item>
+
+        <!--FIELDS HIGHLIGHT COLOR-->
+        <item name="colorAccent">#000</item>
+
+        <!--PAY/DONE BUTTON COLOR-->
+        <item name="colorButtonNormal">#000000</item>
+
+        <!--HELPER LABELS AND FIELD UNSELECTED FIELD COLOR-->
+        <item name="colorControlNormal">#000</item>
+
+    </style>
 
     <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
         <item name="colorAccent">@color/blue</item>

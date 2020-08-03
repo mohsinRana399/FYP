@@ -15,7 +15,6 @@ import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TimePicker;
-import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
@@ -25,26 +24,19 @@ import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.DialogFragment;
 
 import com.bumptech.glide.Glide;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.hsalf.smilerating.BaseRating;
 import com.hsalf.smilerating.SmileRating;
 import com.paradigmshift.fyp.Chat.data.MainChatActivity;
 import com.paradigmshift.fyp.Chat.data.StaticConfig;
 import com.paradigmshift.fyp.FirebaseDatamodel.AppointmentDataModel;
+import com.paradigmshift.fyp.Hire.payment.PaymentActivity;
 import com.paradigmshift.fyp.Notifications.AlertReceiver;
 import com.paradigmshift.fyp.Notifications.App;
 import com.paradigmshift.fyp.Notifications.ReviewReceiver;
 import com.paradigmshift.fyp.R;
-import com.paradigmshift.fyp.fragments.ChemistryFragment;
 import com.paradigmshift.fyp.fragments.DatePickerFragment;
 import com.paradigmshift.fyp.fragments.TimePickerFragment;
-import com.paradigmshift.fyp.review.Review_activity;
-import com.paradigmshift.fyp.viewpager.DashActivity;
 
 import java.text.DateFormat;
 import java.util.Calendar;
@@ -197,6 +189,7 @@ public class HireActivity extends AppCompatActivity implements DatePickerDialog.
 
     public void hireTutor(View view) {
 
+        //THE ACTUAL WORK !!
         //Toast.makeText(this, Hrs + " : " + Min, Toast.LENGTH_SHORT).show();
         if(ValidateSchedule()) {
             new AlertDialog.Builder(HireActivity.this, R.style.MyAlertDialogStyle)
@@ -207,6 +200,14 @@ public class HireActivity extends AppCompatActivity implements DatePickerDialog.
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             dialogInterface.dismiss();
+                            Intent intent = new Intent(HireActivity.this, PaymentActivity.class);
+                            intent.putExtra("date",""+Date.getText());
+                            intent.putExtra("time",""+Time.getText());
+                            intent.putExtra("name",""+name);
+                            intent.putExtra("email",""+email);
+                            startActivity(intent);
+                            finish();
+                            /*
                             SendNotification("You have hired : " + name + "\nYour tutoring session will be held on : "
                                     + Date.getText() + "\n" + Time.getText());
                             confirmAppointment();
@@ -216,7 +217,7 @@ public class HireActivity extends AppCompatActivity implements DatePickerDialog.
                             intent.putExtra("n",name);
                             intent.putExtra("E",email);
                             startActivity(intent);
-                            finish();
+                            finish();*/
 
                         }
                     })
@@ -353,4 +354,6 @@ public class HireActivity extends AppCompatActivity implements DatePickerDialog.
 
         db.collection("appointments").document(appointID).set(newAppointment);
     }
+
+
 }
