@@ -10,6 +10,7 @@
     <string name="signup_redirect">Don\'t have an account? Register here!</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="agora_app_id">542a804be02849e89e95d39cd159185d</string>
 
     <string name="account_balance">Account Balance</string>
     <string name="balance_currency">$</string>

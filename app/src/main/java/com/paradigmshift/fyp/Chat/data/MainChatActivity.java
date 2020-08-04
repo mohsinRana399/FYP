@@ -10,11 +10,13 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -25,6 +27,8 @@ import com.paradigmshift.fyp.Chat.data.ChatClassesACt.FriendsFragment;
 import com.paradigmshift.fyp.Chat.data.ChatClassesACt.GroupFragment;
 import com.paradigmshift.fyp.Chat.data.service.ServiceUtils;
 import com.paradigmshift.fyp.Hire.HireActivity;
+import com.paradigmshift.fyp.Hire.payment.PaymentActivity;
+import com.paradigmshift.fyp.MainActivity;
 import com.paradigmshift.fyp.R;
 
 import java.util.ArrayList;
@@ -56,6 +60,7 @@ public class MainChatActivity extends AppCompatActivity {
             setSupportActionBar(toolbar);
             getSupportActionBar().setTitle("Conversations");
         }
+
 
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         floatButton = (FloatingActionButton) findViewById(R.id.fab);

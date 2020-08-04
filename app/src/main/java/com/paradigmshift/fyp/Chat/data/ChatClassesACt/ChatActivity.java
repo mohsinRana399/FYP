@@ -36,6 +36,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.paradigmshift.fyp.Chat.data.MainChatActivity;
 import com.paradigmshift.fyp.Chat.data.SharedPreferenceHelper;
 import com.paradigmshift.fyp.Chat.data.StaticConfig;
+import com.paradigmshift.fyp.Chat.data.call.VideoChatViewActivity;
 import com.paradigmshift.fyp.FirebaseDatamodel.ProfileDataModel;
 import com.paradigmshift.fyp.FirebaseDatamodel.model.Consersation;
 import com.paradigmshift.fyp.FirebaseDatamodel.model.Message;
@@ -177,6 +178,11 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
     public void gotoDashboard(View view) {
         finish();
         startActivity(new Intent(ChatActivity.this, MainChatActivity.class));
+    }
+    public void call(View view) {
+        Intent intent = new Intent(ChatActivity.this, VideoChatViewActivity.class);
+        startActivity(intent);
+        finish();
     }
 }
 
