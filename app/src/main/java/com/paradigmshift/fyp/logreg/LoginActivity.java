@@ -388,6 +388,7 @@ public class LoginActivity extends AppCompatActivity {
                 tutorModel.setDocumentID(StaticConfig.UID);
                 tutorModel.setPhoneNo("Your Number");
                 tutorModel.setTitle("Your title");
+                tutorModel.setSubject("Select Subject");
                 tutorProfileReference.set(tutorModel);
             }
         }

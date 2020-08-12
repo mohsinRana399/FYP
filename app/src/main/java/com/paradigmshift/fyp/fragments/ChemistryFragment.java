@@ -134,14 +134,6 @@ public class ChemistryFragment extends Fragment {
                         }
                     });
 
-
-
-
-
-
-
-        //Use this now
-
     }
 
 }

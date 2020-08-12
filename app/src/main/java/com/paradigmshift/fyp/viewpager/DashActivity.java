@@ -153,13 +153,13 @@ public class DashActivity extends AppCompatActivity implements DrawerAdapter.OnI
             public CharSequence getPageTitle(int position) {
                 switch (position % 4) {
                     case 0:
-                        return "Computer Science";
+                        return "Subjects";
                     case 1:
-                        return "Chemistry";
+                        return "FCP";
                     case 2:
-                        return "Physics";
+                        return "DB";
                     case 3:
-                        return "Maths";
+                        return "MVC";
                 }
                 return "";
             }

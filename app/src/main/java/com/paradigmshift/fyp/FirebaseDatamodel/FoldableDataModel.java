@@ -25,6 +25,7 @@ public class FoldableDataModel {
     private String status;
     private String Title = "";
     private String PhoneNo = "";
+    private String Subject = "";
 
     public FoldableDataModel() {
     }
@@ -131,5 +132,13 @@ public class FoldableDataModel {
 
     public void setPhoneNo(String phoneNo) {
         PhoneNo = phoneNo;
+    }
+
+    public String getSubject() {
+        return Subject;
+    }
+
+    public void setSubject(String subject) {
+        Subject = subject;
     }
 }

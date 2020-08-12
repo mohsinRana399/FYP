@@ -15,7 +15,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.webkit.MimeTypeMap;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -50,9 +53,11 @@ import com.squareup.picasso.Picasso;
 import java.sql.Time;
 import java.util.ArrayList;
 
+import javax.security.auth.Subject;
+
 import stream.customalert.CustomAlertDialogue;
 
-public class TutorProfileActivity extends AppCompatActivity implements  TimePickerDialog.OnTimeSetListener{
+public class TutorProfileActivity extends AppCompatActivity implements  TimePickerDialog.OnTimeSetListener,AdapterView.OnItemSelectedListener{
 
 
     private static final int PICK_IMAGE_REQUEST = 1;
@@ -67,6 +72,7 @@ public class TutorProfileActivity extends AppCompatActivity implements  TimePick
     private static final String AVAIL_FROM = "availableFrom";
     private static final String AVAIL_TO = "availableTo";
     private static final String RATE = "rate";
+    private static final String SUBJECT = "subject";
     private Uri mImageUri;
     private StorageTask mUploadTask;
     private FABProgressCircle fabProgressCircle;
@@ -75,6 +81,7 @@ public class TutorProfileActivity extends AppCompatActivity implements  TimePick
     private DocumentReference profileReference = db.collection("TutorData").document(StaticConfig.UID);
     private DatabaseReference userDB;
     public String TimeChoice = "";
+    public String Subs = "";
 
     private StorageReference mStorageRef;
     private DatabaseReference mDatabaseRef;
@@ -82,6 +89,7 @@ public class TutorProfileActivity extends AppCompatActivity implements  TimePick
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutor_profile);
+
 
         LoadData();
 
@@ -103,6 +111,8 @@ public class TutorProfileActivity extends AppCompatActivity implements  TimePick
         TextView from = findViewById(R.id.Tutor_available_from);
         TextView to = findViewById(R.id.Tutor_available_to);
         TextView Requests = findViewById(R.id.sRequests);
+        TextView Subjects = findViewById(R.id.SelectSubject);
+
 
         profileReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
@@ -116,13 +126,16 @@ public class TutorProfileActivity extends AppCompatActivity implements  TimePick
                 email.setText(model.getEmail());
                 location.setText(model.getStrretAddress() + ", " + model.getCity());
                 description.setText(model.getStatus());
-                Toast.makeText(TutorProfileActivity.this, "From : " + model.getAvailableFrom(), Toast.LENGTH_SHORT).show();
                 from.setText(model.getAvailableFrom());
                 to.setText(model.getAvailableTo());
                 Requests.setText(model.getRate());
                 Glide.with(getApplicationContext()).load(model.getProfilePic()).into(profilePic);
 
-                //
+                if(model.getSubject().equals("") || model.getSubject().equals(null)){
+                    Subjects.setText("Select Subject");
+                }else{
+                    Subjects.setText(model.getSubject());
+                }
                 switch (model.getReview()) {
                     case 1:
                         smileRating.setSelectedSmile(BaseRating.TERRIBLE);
@@ -145,7 +158,23 @@ public class TutorProfileActivity extends AppCompatActivity implements  TimePick
                 }
             }
         });
+        String[] subjects = { "All", "Chemistry", "Physics", "Maths"};
+        Spinner spin = (Spinner) findViewById(R.id.spinner1);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, subjects);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spin.setAdapter(adapter);
+        spin.setOnItemSelectedListener(this);
 
+    }
+    @Override
+    public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long id) {
+        String text  = arg0.getItemAtPosition(position).toString();
+        TextView Subjects = findViewById(R.id.SelectSubject);
+        Subjects.setText(text);
+        Subs = text;
+    }
+    @Override
+    public void onNothingSelected(AdapterView<?> arg0) {
     }
 
     public void Back(View view) {
@@ -437,5 +466,10 @@ public class TutorProfileActivity extends AppCompatActivity implements  TimePick
         TimeChoice = "to";
         DialogFragment timePicker = new TimePickerFragment();
         timePicker.show(getSupportFragmentManager(), "time picker");
+    }
+
+    public void EditSubject(View view) {
+        updateData(SUBJECT,Subs);
+
     }
 }
